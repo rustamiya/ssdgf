@@ -1,28 +1,35 @@
 <!doctype html>
-<html manifest="/offline.appcache" lang="ar" dir="rtl">
+<html lang="ar" dir="rtl">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#090909">
-  <meta name="description" content="مصطفى الحمداني — بوابة PS4 للإصدارات المدرجة من 9.00 إلى 14.00، وملفات GoldHEN المحلية حسب الإصدار.">
-  <title>مصطفى الحمداني | بوابة PS4</title>
+  <meta name="description" content="عمر سنتر — بوابة PS4 للإصدارات المدرجة من 9.00 إلى 13.52، وملفات GoldHEN المحلية حسب الإصدار.">
+  <title>عمر سنتر | بوابة PS4</title>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23090909'/%3E%3Ccircle cx='16' cy='16' r='9' fill='none' stroke='%23f4c542' stroke-width='4'/%3E%3Cpath d='M16 9v7l5 3' fill='none' stroke='%23fff0bd' stroke-width='3'/%3E%3C/svg%3E">
   <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
   <div class="shell">
     <main>
-      <h1 class="sr-only" id="page-title">مصطفى الحمداني — بوابة تشغيل PS4</h1>
+      <h1 class="sr-only" id="page-title">عمر سنتر — بوابة تشغيل PS4</h1>
       <div class="brand-artwork">
-        <img src="assets/omar-interface.png" width="1672" height="941" alt="مصطفى الحمداني، مصطفى الحمداني. GoldHEN وPS4. الهاتف 07700091818 وتليغرام . كركوك، شارع الجمهورية، مجمع فريا الالكترونيات، مقابل سمرقند، الطابق الثاني.">
+        <img src="assets/omar-interface.png" width="1672" height="941" alt="عمر سنتر، OMAR CANTER. GoldHEN وPS4. الهاتف 07801492079 وتليغرام hfw5z. كركوك، شارع الجمهورية، مجمع فريا الالكترونيات، مقابل سمرقند، الطابق الثاني.">
       </div>
-      <div class="offline-info" role="status" aria-live="polite"><span id="offline-status">جارٍ فحص الحفظ دون إنترنت…</span><button id="offline-reload" type="button" hidden>تحميل النسخة المحفوظة الجديدة</button></div>
       <section class="workspace" aria-labelledby="page-title">
+        <div class="device-column">
+          <p class="range-note">إصدارات PS4 المدرجة: <b dir="ltr">9.00 – 13.52</b></p>
+          <div class="device" aria-live="polite">
+            <div class="device-row"><span id="device-label">المتصفح الحالي</span><span id="device-state" class="badge">جارٍ التعرّف</span></div>
+            <div class="version"><span id="firmware" dir="ltr">—</span><span class="version-label" id="version-label">إصدار النظام</span></div>
+            <p id="device-note">انتظر لحظة لقراءة معلومات المتصفح.</p>
+          </div>
+
+        </div>
         <div class="route-column">
           <div id="desktop-preview" class="preview-selector" hidden>
             <label for="preview-firmware">معاينة طريقة التشغيل لإصدار:</label>
             <select id="preview-firmware" dir="ltr">
-              <option value="14.00">14.00</option>
               <option value="13.52">13.52</option>
               <option value="13.50">13.50</option>
               <option value="13.04">13.04</option>
@@ -57,22 +64,32 @@
         </div>
         <div class="action-column">
           <button id="launch" class="primary-action" type="button" disabled><span class="play-icon" aria-hidden="true">▶</span><span id="launch-label">انتظر قراءة الإصدار</span></button>
-          <p class="launch-caption" id="launch-caption">يبدأ التشغيل داخل هذه الواجهة.</p>
+          <p class="launch-caption" id="launch-caption">يفتح زر التشغيل ملفات الجلبريك داخل موقع عمر سنتر.</p>
           <p id="action-message" class="action-message" role="status"></p>
           <noscript><p class="notice">فعّل JavaScript في المتصفح حتى يتم التعرّف على الإصدار وإظهار زر التشغيل.</p></noscript>
         </div>
 
       </section>
 
-      <section id="run-panel" class="run-panel" hidden aria-label="حالة تشغيل GoldHEN">
-        <p class="run-heading">مصطفى الحمداني — متابعة التشغيل</p>
-        <iframe id="run-frame" title="خطوات تشغيل GoldHEN ونتيجتها" referrerpolicy="same-origin"></iframe>
+      <section class="guide" aria-label="طريقة الاستخدام">
+        <div class="guide-item"><span class="step-number">01</span><div><h2>افتح من جهازك</h2><p>متصفح الإنترنت في PS4.</p></div></div>
+        <div class="guide-item"><span class="step-number">02</span><div><h2>راجع الإصدار</h2><p>يُقرأ تلقائيًا من المتصفح.</p></div></div>
+        <div class="guide-item"><span class="step-number">03</span><div><h2>ابدأ التشغيل</h2><p>واتبع تعليمات التشغيل.</p></div></div>
       </section>
+
+      <div class="notes">
+        <p><strong>عمر سنتر:</strong> ملفات التشغيل موجودة داخل الموقع. رسالة النجاح تصدر عن الأداة بعد تنفيذها، ولا يضمن فتح الصفحة نجاح التعديل.</p>
+        <button type="button" class="text-button" id="help-toggle" aria-expanded="false" aria-controls="help">الإصدارات والمصادر <span aria-hidden="true">+</span></button>
+        <div id="help" class="help" hidden>
+          <p>للإصدارات المدرجة من 9.00 إلى 13.52 فقط. طابق إصدار الجهاز مع الإعدادات ← النظام ← معلومات النظام. بعض مسارات الإصدارات تجريبية؛ لم نختبر هذه النسخة على PS4 فعلي.</p>
+          <p>في أول مرة اتصل بالإنترنت حتى يتم تحميل الملفات. لا تعتبر التخزين دون إنترنت جاهزًا إلا بعد ظهور رسالة اكتماله.</p>
+          <p><a href="credits.html">مصادر الأدوات وأسماء المطورين</a></p>
+        </div>
+      </div>
     </main>
 
-    <footer><span>مصطفى الحمداني <span class="footer-divider">/</span> بوابة PS4</span><div class="contact-links"><a href="tel:+9647700091818" dir="ltr">07700091818</a><a href="https://t.me/" dir="ltr" rel="noopener noreferrer">@</a></div></footer>
+    <footer><span>عمر سنتر <span class="footer-divider">/</span> بوابة PS4</span><div class="contact-links"><a href="tel:+9647801492079" dir="ltr">07801492079</a><a href="https://t.me/hfw5z" dir="ltr" rel="noopener noreferrer">@hfw5z</a></div></footer>
   </div>
-  <script src="assets/offline.js"></script>
   <script src="assets/app.js"></script>
 </body>
 </html>

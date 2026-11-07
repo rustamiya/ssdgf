@@ -2,7 +2,6 @@
 (function () {
  var msg=document.getElementById('msgs');
  if (!omarGroup) { msg.textContent='هذا الإصدار غير مدرج. افتح الصفحة من PS4 بإصدار مطابق.'; return; }
- if (['13.02','13.04','13.50','13.52'].indexOf(omarFirmware)!==-1) { location.replace('ps4-13/index.html'); return; }
  var ac=window.applicationCache;
  var onlineMode=/(?:\?|&)online=1(?:&|$)/.test(location.search);
  if (!onlineMode && (!ac || ac.status === 0 || ac.status === 5)) {

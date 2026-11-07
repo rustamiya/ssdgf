@@ -1,6 +1,4 @@
 CACHE MANIFEST
-# Omar Center migrate to unified PS4 offline cache 2026-11-04-v1
-# Omar Center 2026-11-03 embedded-v1
 # Omar Center local host 2026-09-23-v2
 
 CACHE:
@@ -32,7 +30,3 @@ css/workers.js
 
 NETWORK:
 *
-
-# Design draft: CENTER spelling and simplified interface
-
-# OMAR CENTER domain revision 2026-09-26
