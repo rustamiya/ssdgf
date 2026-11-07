@@ -1,0 +1,47 @@
+name: Install Omar Center site files
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - site-package.zip
+      - .github/workflows/install-site.yml
+permissions:
+  contents: write
+concurrency:
+  group: install-omar-site
+  cancel-in-progress: false
+jobs:
+  install:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - name: Verify and extract the complete site
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path, PurePosixPath
+          import hashlib, json, zipfile
+          archive = Path('site-package.zip')
+          expected = '0489faf3ea438c99dc4cd23e14ffeff1436f1e438df6eb75a499afde70610ebe'
+          assert hashlib.sha256(archive.read_bytes()).hexdigest() == expected, 'Unexpected package checksum'
+          allowed = {'.nojekyll', 'LICENSE-PSFree.txt', 'README.md', 'SHA256SUMS.json', 'index.html', 'credits.html', 'assets', 'host'}
+          with zipfile.ZipFile(archive) as z:
+              assert z.testzip() is None, 'Damaged archive'
+              for info in z.infolist():
+                  p = PurePosixPath(info.filename)
+                  assert not p.is_absolute() and '..' not in p.parts and p.parts[0] in allowed
+                  assert ((info.external_attr >> 16) & 0o170000) != 0o120000, 'Symlink not allowed'
+              z.extractall('.')
+          for name, digest in json.loads(Path('SHA256SUMS.json').read_text()).items():
+              assert hashlib.sha256(Path(name).read_bytes()).hexdigest() == digest, name
+          print('All 71 site files extracted and verified.')
+          PY
+      - name: Commit the unpacked website to main
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -- .nojekyll LICENSE-PSFree.txt README.md SHA256SUMS.json index.html credits.html assets host
+          if ! git diff --cached --quiet; then
+            git commit -m 'Install complete Omar Center PS4 host with local payloads'
+            git push origin HEAD:main
+          fi

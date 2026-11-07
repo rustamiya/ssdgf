@@ -1,0 +1,11 @@
+{
+  "source": "https://github.com/raw13g/raw13g.github.io",
+  "commit": "9ba2f0719591d6900d91aba6cc5291f8fff97e6d",
+  "scope": [
+    "13.02",
+    "13.04",
+    "13.50",
+    "13.52"
+  ],
+  "changes": "Branding and unsupported-device entry guard only; upstream runtime files unchanged"
+}

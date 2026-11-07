@@ -1,0 +1,18 @@
+{
+  "repository": "ntfargo/Relapse-Exploit",
+  "commit": "09f10f5b58fab8a9ae9e8df214da37271290b13e",
+  "comparison": "w90008/3 runtime byte-identical; only README and index differ",
+  "added_firmware": [
+    "12.02",
+    "12.20",
+    "12.40",
+    "12.60",
+    "12.70",
+    "13.00",
+    "13.20",
+    "13.40",
+    "13.42",
+    "13.60"
+  ],
+  "changes": "index.html shop branding only"
+}
